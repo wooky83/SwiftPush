@@ -17,6 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if let nm = UserDefaults.standard.value(forKey: "key") as? Int {
+            print("Slient Data is \(nm)")
+        }
         registerForPushNotifications(application: application)
         
         return true
@@ -48,6 +52,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let token = deviceToken.reduce("") { $0 + String(format: "%02x", $1) }
         print(token)
     }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        guard let nb = userInfo["number"] as? Int else {
+            completionHandler(.noData)
+            return
+        }
+        print("Silent Push!! : \(nb)")
+        UserDefaults.standard.set(nb, forKey: "key")
+        UserDefaults.standard.synchronize()
+        completionHandler(.newData)
+        //completionHandler(.failed)
+    }
 
 }
 
@@ -68,12 +84,13 @@ extension AppDelegate {
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
-    //앱 실행 중 Push 받을때 먼저 호출
+    //포그라운드에서 푸쉬 수신 이벤트
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         print("willPresent notification")
+        //completionHandler 호출안하면 alert 안뜸
         completionHandler([.alert, .sound, .badge])
     }
-    //앱 실행중이거나 아닐때 Push 받을때
+    //backGround Push 받을때 이벤트
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         defer { completionHandler() }
         print("didReceive response")
