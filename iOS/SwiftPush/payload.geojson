@@ -1,0 +1,9 @@
+{
+    "otterspot": true,
+    "aps": {
+        "alert": {
+            "body": "Tap me!"
+        }
+    }
+}
+

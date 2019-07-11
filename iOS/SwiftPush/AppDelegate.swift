@@ -17,12 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        UNUserNotificationCenter.current().requestAuthorization(options: [.badge, .sound, .alert]) { granted, _ in
-            guard granted else { return }
-            DispatchQueue.main.async {
-                application.registerForRemoteNotifications()
-            }
-        }
+        registerForPushNotifications(application: application)
+        
         return true
     }
 
@@ -55,3 +51,39 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate {
+    func registerForPushNotifications(application: UIApplication) {
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options: [.badge, .sound, .alert]) {
+            [weak self] granted, _ in
+            guard granted else { return }
+            
+            center.delegate = self
+            
+            DispatchQueue.main.async {
+                application.registerForRemoteNotifications()
+            }
+        }
+    }
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    //앱 실행 중 Push 받을때 먼저 호출
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        print("willPresent notification")
+        completionHandler([.alert, .sound, .badge])
+    }
+    //앱 실행중이거나 아닐때 Push 받을때
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        defer { completionHandler() }
+        print("didReceive response")
+        guard response.actionIdentifier == UNNotificationDefaultActionIdentifier else { return }
+        let payload = response.notification.request.content
+        print(String(describing: payload))
+        guard let _ = payload.userInfo["otterspot"] else { return }
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: "otterspot")
+        self.window!.rootViewController!.present(vc, animated: false)
+    }
+    
+}
