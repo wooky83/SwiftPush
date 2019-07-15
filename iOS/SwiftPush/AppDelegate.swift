@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  SwiftPush
 //
-//  Created by 1002659 on 10/07/2019.
+//  Created by wooky83 on 10/07/2019.
 //  Copyright © 2019 wooky. All rights reserved.
 //
 
@@ -13,7 +13,10 @@ import UserNotifications
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    let categoryButtonsId = "AcceptOrReject"
+    enum ActionButtonsId: String {
+        case accept, reject
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -51,6 +54,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         let token = deviceToken.reduce("") { $0 + String(format: "%02x", $1) }
         print(token)
+        registerCustomActions()
     }
     
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
@@ -81,6 +85,15 @@ extension AppDelegate {
             }
         }
     }
+    
+    func registerCustomActions() {
+        // Buttons category
+        let accept = UNNotificationAction(identifier: ActionButtonsId.accept.rawValue, title: "Accept")
+        let reject = UNNotificationAction(identifier: ActionButtonsId.reject.rawValue, title: "Reject")
+        let categoryButtons = UNNotificationCategory(identifier: categoryButtonsId, actions: [accept, reject], intentIdentifiers: [])
+        
+        UNUserNotificationCenter.current().setNotificationCategories([categoryButtons])
+    }
 }
 
 extension AppDelegate: UNUserNotificationCenterDelegate {
@@ -94,13 +107,26 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         defer { completionHandler() }
         print("didReceive response")
-        guard response.actionIdentifier == UNNotificationDefaultActionIdentifier else { return }
-        let payload = response.notification.request.content
-        print(String(describing: payload))
-        guard let _ = payload.userInfo["otterspot"] else { return }
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let vc = storyboard.instantiateViewController(withIdentifier: "otterspot")
-        self.window!.rootViewController!.present(vc, animated: false)
+        if response.actionIdentifier == UNNotificationDefaultActionIdentifier {
+            let payload = response.notification.request.content
+            print(String(describing: payload))
+            guard let _ = payload.userInfo["otterspot"] else { return }
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "otterspot")
+            self.window!.rootViewController!.present(vc, animated: false)
+        }
+        
+        let identity = response.notification.request.content.categoryIdentifier
+        guard identity == categoryButtonsId, let action = ActionButtonsId(rawValue: response.actionIdentifier) else { return }
+        print("You pressed \(response.actionIdentifier)")
+        let userInfo = response.notification.request.content.userInfo
+        switch action {
+        case .accept:
+            Notification.Name.acceptButton.post(userInfo: userInfo)
+        case .reject:
+            Notification.Name.rejectButton.post(userInfo: userInfo)
+        }
+        
     }
     
 }

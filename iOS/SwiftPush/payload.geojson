@@ -7,3 +7,13 @@
     }
 }
 
+
+{
+    "aps": {
+        "alert": {
+            "title": "Magic Touch this notification"
+        },
+        "category": "AcceptOrReject",
+        "sound": "default"
+    }
+}

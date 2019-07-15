@@ -12,6 +12,8 @@
 		3C98565522D57C1400EE91C7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C98565322D57C1400EE91C7 /* Main.storyboard */; };
 		3C98565722D57C1400EE91C7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C98565622D57C1400EE91C7 /* Assets.xcassets */; };
 		3C98565A22D57C1400EE91C7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C98565822D57C1400EE91C7 /* LaunchScreen.storyboard */; };
+		3C99D25122DC363000077B72 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C99D25022DC363000077B72 /* Notification.swift */; };
+		3C99D25322DC36A100077B72 /* CategoryVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C99D25222DC36A100077B72 /* CategoryVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		3C98565B22D57C1400EE91C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C98566122D5837E00EE91C7 /* SwiftPush.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftPush.entitlements; sourceTree = "<group>"; };
 		3C98906E22D6D3DB00CA5A0D /* payload.geojson */ = {isa = PBXFileReference; lastKnownFileType = text; path = payload.geojson; sourceTree = "<group>"; };
+		3C99D25022DC363000077B72 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		3C99D25222DC36A100077B72 /* CategoryVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			isa = PBXGroup;
 			children = (
 				3C98564F22D57C1400EE91C7 /* AppDelegate.swift */,
+				3C99D25022DC363000077B72 /* Notification.swift */,
 				3C98906B22D6D2C300CA5A0D /* Controllers */,
 				3C98906D22D6D2D800CA5A0D /* Support Files */,
 				3C98906E22D6D3DB00CA5A0D /* payload.geojson */,
@@ -69,6 +74,7 @@
 			isa = PBXGroup;
 			children = (
 				3C98565122D57C1400EE91C7 /* ViewController.swift */,
+				3C99D25222DC36A100077B72 /* CategoryVC.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -165,6 +171,8 @@
 			files = (
 				3C98565222D57C1400EE91C7 /* ViewController.swift in Sources */,
 				3C98565022D57C1400EE91C7 /* AppDelegate.swift in Sources */,
+				3C99D25322DC36A100077B72 /* CategoryVC.swift in Sources */,
+				3C99D25122DC363000077B72 /* Notification.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
