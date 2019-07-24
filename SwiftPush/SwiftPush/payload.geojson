@@ -17,3 +17,15 @@
         "sound": "default"
     }
 }
+
+{
+    "aps": {
+        "encrypted": true,
+        "alert": {
+            "title": "Magic Touch this notification",
+            "body": "Good Luck"
+        },
+        "mutable-content": 1,
+        "sound": "default"
+    }
+}
