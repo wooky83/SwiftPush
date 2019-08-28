@@ -1,0 +1,403 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		3C891CF123161FEA007D959A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C891CF023161FEA007D959A /* AppDelegate.swift */; };
+		3C891CF323161FEA007D959A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C891CF223161FEA007D959A /* ViewController.swift */; };
+		3C891CF823161FEA007D959A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C891CF723161FEA007D959A /* Assets.xcassets */; };
+		3C891CFB23161FEA007D959A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C891CF923161FEA007D959A /* LaunchScreen.storyboard */; };
+		3C891D062316408A007D959A /* LocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C891D052316408A007D959A /* LocationViewController.swift */; };
+		3C891D08231640A6007D959A /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C891D07231640A6007D959A /* LocationDetailsViewController.swift */; };
+		3C891D0A231640DE007D959A /* UIAlertController+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C891D09231640DE007D959A /* UIAlertController+Ext.swift */; };
+		3C891D0C231640FE007D959A /* UITextField+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C891D0B231640FE007D959A /* UITextField+Ext.swift */; };
+		3C891D0E2316412C007D959A /* SegueHandlerType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C891D0D2316412C007D959A /* SegueHandlerType.swift */; };
+		3C891D10231641D6007D959A /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C891D0F231641D6007D959A /* NotificationScheduler.swift */; };
+		3C891D1223164203007D959A /* TimeIntervalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C891D1123164203007D959A /* TimeIntervalViewController.swift */; };
+		3C891D142316420F007D959A /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C891D132316420F007D959A /* CalendarViewController.swift */; };
+		3C891D19231642CE007D959A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3C891D17231642CE007D959A /* Main.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		3C891CED23161FEA007D959A /* RocalPush.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RocalPush.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C891CF023161FEA007D959A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		3C891CF223161FEA007D959A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		3C891CF723161FEA007D959A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3C891CFA23161FEA007D959A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		3C891CFC23161FEA007D959A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C891D022316401B007D959A /* RocalPush.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RocalPush.entitlements; sourceTree = "<group>"; };
+		3C891D052316408A007D959A /* LocationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationViewController.swift; sourceTree = "<group>"; };
+		3C891D07231640A6007D959A /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
+		3C891D09231640DE007D959A /* UIAlertController+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Ext.swift"; sourceTree = "<group>"; };
+		3C891D0B231640FE007D959A /* UITextField+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Ext.swift"; sourceTree = "<group>"; };
+		3C891D0D2316412C007D959A /* SegueHandlerType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SegueHandlerType.swift; sourceTree = "<group>"; };
+		3C891D0F231641D6007D959A /* NotificationScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
+		3C891D1123164203007D959A /* TimeIntervalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeIntervalViewController.swift; sourceTree = "<group>"; };
+		3C891D132316420F007D959A /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		3C891D18231642CE007D959A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3C891CEA23161FEA007D959A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3C891CE423161FEA007D959A = {
+			isa = PBXGroup;
+			children = (
+				3C891CEF23161FEA007D959A /* RocalPush */,
+				3C891CEE23161FEA007D959A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3C891CEE23161FEA007D959A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3C891CED23161FEA007D959A /* RocalPush.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3C891CEF23161FEA007D959A /* RocalPush */ = {
+			isa = PBXGroup;
+			children = (
+				3C891D0423164063007D959A /* Extensions */,
+				3C891D032316405B007D959A /* Location */,
+				3C891D022316401B007D959A /* RocalPush.entitlements */,
+				3C891D0D2316412C007D959A /* SegueHandlerType.swift */,
+				3C891D0F231641D6007D959A /* NotificationScheduler.swift */,
+				3C891D1123164203007D959A /* TimeIntervalViewController.swift */,
+				3C891D132316420F007D959A /* CalendarViewController.swift */,
+				3C891CF023161FEA007D959A /* AppDelegate.swift */,
+				3C891CF223161FEA007D959A /* ViewController.swift */,
+				3C891CF723161FEA007D959A /* Assets.xcassets */,
+				3C891CF923161FEA007D959A /* LaunchScreen.storyboard */,
+				3C891D17231642CE007D959A /* Main.storyboard */,
+				3C891CFC23161FEA007D959A /* Info.plist */,
+			);
+			path = RocalPush;
+			sourceTree = "<group>";
+		};
+		3C891D032316405B007D959A /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				3C891D052316408A007D959A /* LocationViewController.swift */,
+				3C891D07231640A6007D959A /* LocationDetailsViewController.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		3C891D0423164063007D959A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				3C891D09231640DE007D959A /* UIAlertController+Ext.swift */,
+				3C891D0B231640FE007D959A /* UITextField+Ext.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3C891CEC23161FEA007D959A /* RocalPush */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C891CFF23161FEA007D959A /* Build configuration list for PBXNativeTarget "RocalPush" */;
+			buildPhases = (
+				3C891CE923161FEA007D959A /* Sources */,
+				3C891CEA23161FEA007D959A /* Frameworks */,
+				3C891CEB23161FEA007D959A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RocalPush;
+			productName = RocalPush;
+			productReference = 3C891CED23161FEA007D959A /* RocalPush.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3C891CE523161FEA007D959A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1030;
+				LastUpgradeCheck = 1030;
+				ORGANIZATIONNAME = wooky;
+				TargetAttributes = {
+					3C891CEC23161FEA007D959A = {
+						CreatedOnToolsVersion = 10.3;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+				};
+			};
+			buildConfigurationList = 3C891CE823161FEA007D959A /* Build configuration list for PBXProject "RocalPush" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3C891CE423161FEA007D959A;
+			productRefGroup = 3C891CEE23161FEA007D959A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3C891CEC23161FEA007D959A /* RocalPush */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3C891CEB23161FEA007D959A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C891D19231642CE007D959A /* Main.storyboard in Resources */,
+				3C891CFB23161FEA007D959A /* LaunchScreen.storyboard in Resources */,
+				3C891CF823161FEA007D959A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3C891CE923161FEA007D959A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C891D142316420F007D959A /* CalendarViewController.swift in Sources */,
+				3C891D1223164203007D959A /* TimeIntervalViewController.swift in Sources */,
+				3C891D08231640A6007D959A /* LocationDetailsViewController.swift in Sources */,
+				3C891D0C231640FE007D959A /* UITextField+Ext.swift in Sources */,
+				3C891D0A231640DE007D959A /* UIAlertController+Ext.swift in Sources */,
+				3C891D062316408A007D959A /* LocationViewController.swift in Sources */,
+				3C891D10231641D6007D959A /* NotificationScheduler.swift in Sources */,
+				3C891CF323161FEA007D959A /* ViewController.swift in Sources */,
+				3C891CF123161FEA007D959A /* AppDelegate.swift in Sources */,
+				3C891D0E2316412C007D959A /* SegueHandlerType.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		3C891CF923161FEA007D959A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3C891CFA23161FEA007D959A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		3C891D17231642CE007D959A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				3C891D18231642CE007D959A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		3C891CFD23161FEA007D959A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3C891CFE23161FEA007D959A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3C891D0023161FEA007D959A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RocalPush/RocalPush.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PZZ5SH6C48;
+				INFOPLIST_FILE = RocalPush/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wooky.RocalPush;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		3C891D0123161FEA007D959A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RocalPush/RocalPush.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = PZZ5SH6C48;
+				INFOPLIST_FILE = RocalPush/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wooky.RocalPush;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3C891CE823161FEA007D959A /* Build configuration list for PBXProject "RocalPush" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C891CFD23161FEA007D959A /* Debug */,
+				3C891CFE23161FEA007D959A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C891CFF23161FEA007D959A /* Build configuration list for PBXNativeTarget "RocalPush" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C891D0023161FEA007D959A /* Debug */,
+				3C891D0123161FEA007D959A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3C891CE523161FEA007D959A /* Project object */;
+}
