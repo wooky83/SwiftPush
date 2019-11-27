@@ -22,6 +22,7 @@
 		3C891CD923161FCF007D959A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C891CDC23161FCF007D959A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3C891CDE23161FCF007D959A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C930195238E05E500C44E28 /* RemotePush.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = RemotePush.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +55,7 @@
 		3C891CD123161FCE007D959A /* RemotePush */ = {
 			isa = PBXGroup;
 			children = (
+				3C930195238E05E500C44E28 /* RemotePush.entitlements */,
 				3C891CD223161FCE007D959A /* AppDelegate.swift */,
 				3C891CD423161FCE007D959A /* ViewController.swift */,
 				3C891CD623161FCE007D959A /* Main.storyboard */,
@@ -282,6 +284,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RemotePush/RemotePush.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PZZ5SH6C48;
 				INFOPLIST_FILE = RemotePush/Info.plist;
@@ -289,7 +292,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wooky.RemotePush;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wooky.SwiftPush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -300,6 +303,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = RemotePush/RemotePush.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = PZZ5SH6C48;
 				INFOPLIST_FILE = RemotePush/Info.plist;
@@ -307,7 +311,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.wooky.RemotePush;
+				PRODUCT_BUNDLE_IDENTIFIER = com.wooky.SwiftPush;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
