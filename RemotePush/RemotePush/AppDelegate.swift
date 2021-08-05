@@ -65,7 +65,8 @@ extension AppDelegate {
             }
         }
     }
-    //사일런트 push
+    ////사일런트 푸쉬 수신 이벤트 핸들러
+    ////주의 - 포그라운드에서 사일런트 푸쉬 수신 시 userNotificationCenter:willPresentNotification와 동시 호출됨
     func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
         os_log("didReceiveRemoteNotification")
         defer { completionHandler(.newData) }
@@ -78,6 +79,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     //Foreground에서 push 수신시
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         os_log("userNotificationCenter willPresent")
+        //ForeGround시에 Push 수신시 System Alert 뜨게 CompletionHandler, System Alert 뜨지 않게 하려면 CompletionHandler 없이 Process 진행
         completionHandler([.alert, .sound, .badge])
     }
     //Background에서 push 수신시
